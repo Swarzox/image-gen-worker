@@ -119,7 +119,7 @@ print("[worker] FastAPI is healthy!")
 # ---------------------------------------------------------------------------
 # 5. Run Vast PyWorker
 # ---------------------------------------------------------------------------
-from vastai import Worker, WorkerConfig, HandlerConfig, BenchmarkConfig, LogActionConfig
+from vastai import Worker, WorkerConfig, HandlerConfig, LogActionConfig
 
 config = WorkerConfig(
     model_server_url="http://127.0.0.1",
@@ -131,11 +131,6 @@ config = WorkerConfig(
             allow_parallel_requests=True,
             max_queue_time=180.0,
             workload_calculator=lambda payload: 100.0,
-            benchmark_config=BenchmarkConfig(
-                generator=lambda: {"prompt": "a red panda reading a book", "ratio": "9:16"},
-                runs=1,
-                concurrency=1,
-            ),
         ),
         HandlerConfig(
             route="/status",
