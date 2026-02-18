@@ -23,7 +23,7 @@ try:
     if r.returncode != 0:
         print("[worker] Starting Xvfb...")
         subprocess.Popen(
-            ["Xvfb", ":99", "-screen", "0", "800x600x8",
+            ["Xvfb", ":99", "-screen", "0", "1920x1080x24",
              "-maxclients", "512", "-nolisten", "tcp"],
             stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
         )
